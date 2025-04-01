@@ -105,7 +105,17 @@
     
    
   
-   
+       <!-- Campo de búsqueda -->
+    <input class="search-bar" type="text" placeholder="Buscar en la web..." id="search" onkeydown="if(event.key === 'Enter'){searchGoogle()}">
+
+    <script>
+        function searchGoogle() {
+            const query = document.getElementById("search").value;
+            if(query) {
+                window.open(`https://www.google.com/search?q=${query}`, "_blank");
+            }
+        }
+    </script>
     
 
 </body>
