@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="light dark">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
     body {
@@ -20,7 +20,11 @@
         margin-top: 50px;
     
     }
-    .cgoogle{
+    .buscador_google{
+        margin: auto;
+        display: block;
+        margin-top: 50px;
+        margin-bottom: 50px;
         border-color: rgb(178, 231, 173);
         border-radius: 20px;
         font-size: 18px;
@@ -28,14 +32,11 @@
         width: 500px;   
     }
 
-    .bgoogle{
-        border-color: rgb(178, 231, 173);
-        border-radius: 20px;
-        height: 35px;
-        width: 80px;    
-    }
-
-    .cstart{
+    .buscador_start{
+        margin: auto;
+        display: block;
+        margin-top: 50px;
+        margin-bottom: 50px;
         border-color: rgb(130, 97, 192);
         border-radius: 20px;
         font-size: 18px;
@@ -43,12 +44,18 @@
         width: 500px;   
     }
 
-    .bstart{
+    .buscador_aliexpress{
+        margin: auto;
+        display: block;
+        margin-top: 50px;
+        margin-bottom: 50px;
         border-color: rgb(130, 97, 192);
         border-radius: 20px;
-        height: 35px;
-        width: 80px;    
+        font-size: 18px;
+        height: 30px;
+        width: 500px;   
     }
+
     .iyoutube{
         margin-top: 50px;
         width: 70px;
@@ -83,40 +90,41 @@
     <title>StartXor</title>
 </head>
 <body>
-    <a href="http://www.youtube.com"><img src="icons/youtube.png" class="iyoutube"></a>
-    <a href="http://www.gmail.com"><img src="icons/gmail.png" class="igmail"></a>
-    <a href="http://www.github.com"><img src="icons/github.png" class="igithub"></a>
-    <a href="http://www.twitch.com"><img src="icons/twitch.png" class="itwitch"></a>
-    <a href="http://www.drive.google.com"><img src="icons/drive.png" class="idrive"></a>
-    <a href="http://www.keep.google.com"><img src="icons/keep.png" class="ikeep"></a>
+    <a href="http://www.youtube.com/"><img src="StartXor_files/youtube.png" class="iyoutube"></a>
+    <a href="http://www.gmail.com/"><img src="StartXor_files/gmail.png" class="igmail"></a>
+    <a href="http://www.github.com/"><img src="StartXor_files/github.png" class="igithub"></a>
+    <a href="http://www.twitch.com/"><img src="StartXor_files/twitch.png" class="itwitch"></a>
+    <a href="http://www.drive.google.com/"><img src="StartXor_files/drive.png" class="idrive"></a>
+    <a href="http://www.keep.google.com/"><img src="StartXor_files/keep.png" class="ikeep"></a>
 
-    <FORM class="buscador" method="get" action="http://www.google.com/search">
-                <INPUT class="cgoogle" TYPE=text name=q size=31 maxlength=255 value="">
-                <INPUT class="bgoogle" type=submit name=btnG VALUE="Google">  
-    </FORM>
 
-   <FORM class="buscador" method="get" action="http://www.startpage.com/search">
-        <INPUT class="cstart"TYPE=text name=q size=31 maxlength=255 value="">
-        <INPUT class="bstart" type=submit name=btnG VALUE="Startpage">
-    </FORM>
-
-    
-   
-    
-   
-  
-       <!-- Campo de búsqueda -->
-    <input class="search-bar" type="text" placeholder="Buscar en la web..." id="search" onkeydown="if(event.key === 'Enter'){searchGoogle()}">
+    <!-- Campo de búsqueda -->
+    <input class="buscador_google" type="text" size="31" maxlength="255" placeholder="  Buscar en Google  " id="search_01" onkeydown="if(event.key === 'Enter'){searchGoogle()}">
+    <input class="buscador_start" type="text" size="31" maxlength="255" placeholder="  Busqueda en StartPage  " id="search_02" onkeydown="if(event.key === 'Enter'){searchStart()}">
+    <input class="buscador_aliexpress" type="text" size="31" maxlength="255" placeholder="  Busqueda en Aliexpress  " id="search_03" onkeydown="if(event.key === 'Enter'){searchAliexpress()}">
 
     <script>
         function searchGoogle() {
-            const query = document.getElementById("search").value;
+            const query = document.getElementById("search_01").value;
             if(query) {
                 window.open(`https://www.google.com/search?q=${query}`, "_blank");
             }
         }
+        
+        function searchStart() {
+            const query = document.getElementById("search_02").value;
+            if(query) {
+                window.open(`http://www.startpage.com/search?q=${query}`, "_blank");
+            }
+        }
+        
+        function searchAliexpress() {
+            const query = document.getElementById("search_03").value;
+            if(query) {
+                window.open(`https://www.google.com/search?q=site:http://www.aliexpress.com ${query}`, "_blank");
+            }
+        }
     </script>
-    
 
 </body>
 </html>
